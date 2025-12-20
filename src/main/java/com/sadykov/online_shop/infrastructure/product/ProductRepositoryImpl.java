@@ -2,10 +2,12 @@ package com.sadykov.online_shop.infrastructure.product;
 
 import com.sadykov.online_shop.domain.product.Product;
 import com.sadykov.online_shop.domain.product.ProductRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
 
     private final SpringDataProductJpaRepository jpaRepository;
