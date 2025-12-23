@@ -2,9 +2,11 @@ package com.sadykov.online_shop.application.product;
 
 import com.sadykov.online_shop.domain.product.Product;
 import com.sadykov.online_shop.domain.product.ProductRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
