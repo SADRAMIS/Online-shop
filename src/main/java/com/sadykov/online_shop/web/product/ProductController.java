@@ -4,6 +4,7 @@ import com.sadykov.online_shop.application.product.ProductService;
 import com.sadykov.online_shop.domain.product.Product;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,17 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product create(@RequestBody Product product) {
+    public Product create(@RequestBody CreateProductRequest request) {
+        Product product = new Product(
+                null,
+                request.getName(),
+                request.getDescription(),
+                request.getPrice(),
+                request.getQuantity(),
+                request.getCategory(),
+                "ACTIVE",
+                LocalDateTime.now()
+        );
         return productService.create(product);
     }
 
