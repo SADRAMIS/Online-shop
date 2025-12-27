@@ -2,6 +2,7 @@ package com.sadykov.online_shop.web.product;
 
 import com.sadykov.online_shop.application.product.ProductService;
 import com.sadykov.online_shop.domain.product.Product;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -28,7 +29,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product create(@RequestBody CreateProductRequest request) {
+    public Product create(@RequestBody @Valid CreateProductRequest request) {
         Product product = new Product(
                 null,
                 request.getName(),
