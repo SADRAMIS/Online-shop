@@ -1,13 +1,25 @@
 package com.sadykov.online_shop.web.product;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+
 import java.math.BigDecimal;
 
 public class CreateProductRequest {
 
+    @NotBlank
     private String name;
+
     private String description;
+
+    @Positive
     private BigDecimal price;
+
+    @PositiveOrZero
     private int quantity;
+
+    @NotBlank
     private String category;
 
     public String getName() {
