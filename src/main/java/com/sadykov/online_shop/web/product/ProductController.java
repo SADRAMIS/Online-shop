@@ -2,6 +2,7 @@ package com.sadykov.online_shop.web.product;
 
 import com.sadykov.online_shop.application.product.ProductService;
 import com.sadykov.online_shop.domain.product.Product;
+import com.sadykov.online_shop.domain.product.ProductStatus;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class ProductController {
                 request.getPrice(),
                 request.getQuantity(),
                 request.getCategory(),
-                "ACTIVE",
+                ProductStatus.ACTIVE,
                 LocalDateTime.now()
         );
         return productService.create(product);

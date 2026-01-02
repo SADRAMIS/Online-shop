@@ -11,7 +11,7 @@ public class Product {
     private final BigDecimal price;
     private final int quantity;
     private final String category;
-    private final String status;
+    private ProductStatus productStatus;
     private final LocalDateTime createdAt;
 
     public Product(Long id,
@@ -20,7 +20,7 @@ public class Product {
                    BigDecimal price,
                    int quantity,
                    String category,
-                   String status,
+                   ProductStatus productStatus,
                    LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
@@ -28,7 +28,7 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
         this.category = category;
-        this.status = status;
+        this.productStatus = productStatus;
         this.createdAt = createdAt;
     }
 
@@ -56,8 +56,8 @@ public class Product {
         return category;
     }
 
-    public String getStatus() {
-        return status;
+    public ProductStatus getProductStatus() {
+        return productStatus;
     }
 
     public LocalDateTime getCreatedAt() {

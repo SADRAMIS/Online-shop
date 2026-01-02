@@ -48,7 +48,7 @@ public class ProductRepositoryImpl implements ProductRepository {
         entity.setPrice(product.getPrice());
         entity.setQuantity(product.getQuantity());
         entity.setCategory(product.getCategory());
-        entity.setStatus(product.getStatus());
+        entity.setProductStatus(product.getProductStatus());
         entity.setCreatedAt(product.getCreatedAt());
         return entity;
     }
@@ -61,7 +61,7 @@ public class ProductRepositoryImpl implements ProductRepository {
                 productEntity.getPrice(),
                 productEntity.getQuantity(),
                 productEntity.getCategory(),
-                productEntity.getStatus(),
+                productEntity.getProductStatus(),
                 productEntity.getCreatedAt()
         );
     }

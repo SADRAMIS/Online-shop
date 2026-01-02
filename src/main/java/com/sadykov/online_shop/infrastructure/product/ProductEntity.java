@@ -1,5 +1,6 @@
 package com.sadykov.online_shop.infrastructure.product;
 
+import com.sadykov.online_shop.domain.product.ProductStatus;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -22,7 +23,7 @@ public class ProductEntity {
 
     private String category;
 
-    private String status;
+    private ProductStatus productStatus;
 
     private LocalDateTime createdAt;
 
@@ -34,7 +35,7 @@ public class ProductEntity {
                          BigDecimal price,
                          int quantity,
                          String category,
-                         String status,
+                         ProductStatus productStatus,
                          LocalDateTime createdAt) {
         this.id = id;
         this.name = name;
@@ -42,7 +43,7 @@ public class ProductEntity {
         this.price = price;
         this.quantity = quantity;
         this.category = category;
-        this.status = status;
+        this.productStatus = productStatus;
         this.createdAt = createdAt;
     }
 
@@ -94,12 +95,12 @@ public class ProductEntity {
         this.category = category;
     }
 
-    public String getStatus() {
-        return status;
+    public ProductStatus getProductStatus() {
+        return productStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setProductStatus(ProductStatus productStatus) {
+        this.productStatus = productStatus;
     }
 
     public LocalDateTime getCreatedAt() {

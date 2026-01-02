@@ -2,6 +2,7 @@ package com.sadykov.online_shop;
 
 import com.sadykov.online_shop.domain.product.Product;
 import com.sadykov.online_shop.domain.product.ProductRepository;
+import com.sadykov.online_shop.domain.product.ProductStatus;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,7 +29,7 @@ public class OnlineShopApplication {
 						new BigDecimal("1000.00"),
 						10,
 						"TEST",
-						"ACTIVE",
+						ProductStatus.ACTIVE,
 						LocalDateTime.now()
 				);
 				productRepository.save(product);
